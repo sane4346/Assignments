@@ -19,68 +19,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEa-Ev-W6T">
-                                <rect key="frame" x="0.0" y="170" width="375" height="372"/>
+                                <rect key="frame" x="0.0" y="170" width="375" height="300"/>
                                 <subviews>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What is the fastest land animal in the world?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="none" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="ePq-1d-TJa">
-                                        <rect key="frame" x="0.0" y="10" width="375" height="191"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the fastest land animal in the world?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="none" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="ePq-1d-TJa">
+                                        <rect key="frame" x="0.0" y="10" width="375" height="221"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="L2k-4a-cr5"/>
+                                            <constraint firstAttribute="height" constant="221" id="L2k-4a-cr5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BH-Jp-Gu6">
-                                        <rect key="frame" x="10" y="140" width="355" height="40"/>
+                                        <rect key="frame" x="10" y="130" width="355" height="40"/>
                                         <color key="backgroundColor" red="0.26919272970000002" green="0.97115101599999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dJd-ci-S1y"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Pronghorn Antelope">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="firstBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TKv-h8-SFf"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwy-kY-Tn6">
-                                        <rect key="frame" x="12" y="280" width="355" height="40"/>
+                                        <rect key="frame" x="12" y="250" width="355" height="40"/>
                                         <color key="backgroundColor" red="0.26919272970000002" green="0.97115101599999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ujY-zR-1ng"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Springbok">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="thirdBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jwc-tr-S25"/>
+                                        </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIn-w3-bbY">
-                                        <rect key="frame" x="12" y="210" width="355" height="40"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIn-w3-bbY">
+                                        <rect key="frame" x="12" y="190" width="355" height="40"/>
                                         <color key="backgroundColor" red="0.26919272970000002" green="0.97115101599999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="hQO-13-i5F"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Cheetah">
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="15"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <state key="normal" title="Cheetah">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="secondBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O8B-06-Kdh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="oIn-w3-bbY" secondAttribute="bottom" constant="122" id="3xC-yA-J52"/>
+                                    <constraint firstAttribute="bottom" secondItem="oIn-w3-bbY" secondAttribute="bottom" constant="70" id="3xC-yA-J52"/>
                                     <constraint firstItem="oIn-w3-bbY" firstAttribute="width" secondItem="8BH-Jp-Gu6" secondAttribute="width" id="4gP-EW-tQe"/>
                                     <constraint firstItem="oIn-w3-bbY" firstAttribute="leading" secondItem="kEa-Ev-W6T" secondAttribute="leading" constant="12" id="5N3-iB-kEJ"/>
                                     <constraint firstItem="ePq-1d-TJa" firstAttribute="top" secondItem="kEa-Ev-W6T" secondAttribute="top" constant="10" id="Dme-up-9gn"/>
-                                    <constraint firstAttribute="bottom" secondItem="8BH-Jp-Gu6" secondAttribute="bottom" constant="192" id="Eon-Ha-J7x"/>
-                                    <constraint firstAttribute="bottom" secondItem="Mwy-kY-Tn6" secondAttribute="bottom" constant="52" id="FTe-Tp-fzl"/>
+                                    <constraint firstAttribute="bottom" secondItem="8BH-Jp-Gu6" secondAttribute="bottom" constant="130" id="Eon-Ha-J7x"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mwy-kY-Tn6" secondAttribute="bottom" constant="10" id="FTe-Tp-fzl"/>
                                     <constraint firstItem="Mwy-kY-Tn6" firstAttribute="width" secondItem="8BH-Jp-Gu6" secondAttribute="width" id="IKL-xY-Ejq"/>
                                     <constraint firstItem="8BH-Jp-Gu6" firstAttribute="leading" secondItem="kEa-Ev-W6T" secondAttribute="leading" constant="10" id="Nlk-2E-Qsf"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ePq-1d-TJa" secondAttribute="trailing" id="n0J-hi-nz9"/>
                                     <constraint firstItem="ePq-1d-TJa" firstAttribute="width" secondItem="kEa-Ev-W6T" secondAttribute="width" id="orM-8e-V6e"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mwy-kY-Tn6" secondAttribute="trailing" constant="8" id="sZW-ya-Ag9"/>
                                     <constraint firstAttribute="trailing" secondItem="8BH-Jp-Gu6" secondAttribute="trailing" constant="10" id="ubn-oG-eSR"/>
                                     <constraint firstItem="ePq-1d-TJa" firstAttribute="leading" secondItem="kEa-Ev-W6T" secondAttribute="leading" id="vKY-En-bu3"/>
                                     <constraint firstItem="Mwy-kY-Tn6" firstAttribute="leading" secondItem="kEa-Ev-W6T" secondAttribute="leading" constant="12" id="xRa-OX-CWh"/>
@@ -89,7 +96,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kEa-Ev-W6T" secondAttribute="bottom" constant="125" id="b27-Xv-xl9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kEa-Ev-W6T" secondAttribute="bottom" constant="197" id="b27-Xv-xl9"/>
                             <constraint firstItem="kEa-Ev-W6T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="luf-Px-FRK"/>
                             <constraint firstItem="kEa-Ev-W6T" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="sAm-8w-OnK"/>
                             <constraint firstItem="kEa-Ev-W6T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y8f-dZ-FFx"/>

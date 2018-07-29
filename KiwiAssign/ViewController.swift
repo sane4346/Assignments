@@ -15,7 +15,7 @@ struct LabelAnimateAnchorPoint {
     static let trailingCenterY       = CGPoint.init(x: 1, y: 0.5)
     static let centerXCenterY        = CGPoint.init(x: 0.5, y: 0.5)
     static let leadingTop            = CGPoint.init(x: 0, y: 0)
-    static let topCenter             = CGPoint.init(x: 0.5 , y:0.05)
+    static let topCenter             = CGPoint.init(x: 0.5 , y:0.01)
 }
 
 class ViewController: UIViewController {
@@ -30,11 +30,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionLabel.isHidden = false
-        questionLabel.animate(fontSize: 30, duration: 2, animateAnchorPoint: LabelAnimateAnchorPoint.centerXCenterY)
-        
-        DispatchQueue.main.asyncAfter(deadline:.now() + delayTime , execute: {
-            self.showQuestionOptions()
-        })
+        questionLabel.animate(fontSize: 30, duration: 1.5, animateAnchorPoint: LabelAnimateAnchorPoint.centerXCenterY)
+        self.showQuestionOptions()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -45,20 +42,43 @@ class ViewController: UIViewController {
 
     func showQuestionOptions()
     {
-        questionLabel.animate(fontSize: 20, duration: 2, animateAnchorPoint: LabelAnimateAnchorPoint.topCenter)
-        //questionLabel.bounds.size.height = questionLabel.bounds.size.height/2
-        firstAnswerBtn.layer.cornerRadius = firstAnswerBtn.bounds.height/4
-        secondAnswerBtn.layer.cornerRadius = secondAnswerBtn.bounds.height/4
-        thirdAnswerBtn.layer.cornerRadius = thirdAnswerBtn.bounds.height/4
-        UIView.animate(withDuration: 2) {
-            self.firstAnswerBtn.isHidden = false
-            self.secondAnswerBtn.isHidden = false
-            self.thirdAnswerBtn.isHidden = false
-        }
-        
+        let height = firstAnswerBtn.bounds.height
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayTime, execute:{
+            self.questionLabel.animate(fontSize: 20, duration: 1.5, animateAnchorPoint: LabelAnimateAnchorPoint.topCenter)
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayTime + 2.0, execute: {
+            self.self.firstAnswerBtn.layer.cornerRadius = height/3
+            self.self.secondAnswerBtn.layer.cornerRadius = height/3
+            self.thirdAnswerBtn.layer.cornerRadius = height/3
+            UIView.animate(withDuration: 0.5, animations: {
+                self.firstAnswerBtn.alpha = 1
+                self.secondAnswerBtn.alpha = 1
+                self.thirdAnswerBtn.alpha = 1
+            }) { (finished) in
+                
+                self.firstAnswerBtn.isHidden = !finished
+                self.secondAnswerBtn.isHidden = !finished
+                self.thirdAnswerBtn.isHidden = !finished
+            }
+        })
+    }
+    @IBAction func secondBtnClicked(_ sender: Any) {
+        firstAnswerBtn.backgroundColor = UIColor.gray
+        secondAnswerBtn.backgroundColor = UIColor.magenta
+        thirdAnswerBtn.backgroundColor = UIColor.gray
     }
     
+    @IBAction func firstBtnClicked(_ sender: Any) {
+        firstAnswerBtn.backgroundColor = UIColor.magenta
+        secondAnswerBtn.backgroundColor = UIColor.gray
+        thirdAnswerBtn.backgroundColor = UIColor.gray
+    }
     
+    @IBAction func thirdBtnClicked(_ sender: Any) {
+        firstAnswerBtn.backgroundColor = UIColor.gray
+        secondAnswerBtn.backgroundColor = UIColor.gray
+        thirdAnswerBtn.backgroundColor = UIColor.magenta
+    }
 }
 extension UILabel {
     func animate(fontSize: CGFloat, duration: TimeInterval, animateAnchorPoint: CGPoint) {
