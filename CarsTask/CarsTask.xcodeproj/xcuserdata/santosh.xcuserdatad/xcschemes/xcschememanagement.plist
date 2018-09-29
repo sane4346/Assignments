@@ -4,10 +4,23 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>KiwiAssign.xcscheme</key>
+		<key>CarsTask.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>AADEC8A9215FDDB800704651</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AADEC8C1215FDDB800704651</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
