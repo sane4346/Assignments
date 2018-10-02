@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50E10B2A25D9F2F36D75B7F6 /* Pods_RESTFacility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D4E3B02AC8896D186E69B9 /* Pods_RESTFacility.framework */; };
 		F860ACBD216207D000C0CECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860ACBC216207D000C0CECE /* AppDelegate.swift */; };
 		F860ACBF216207D000C0CECE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860ACBE216207D000C0CECE /* ViewController.swift */; };
 		F860ACC2216207D000C0CECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F860ACC0216207D000C0CECE /* Main.storyboard */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56D4E3B02AC8896D186E69B9 /* Pods_RESTFacility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RESTFacility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A405452349D861CF6DF524D /* Pods-RESTFacility.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RESTFacility.release.xcconfig"; path = "Pods/Target Support Files/Pods-RESTFacility/Pods-RESTFacility.release.xcconfig"; sourceTree = "<group>"; };
+		6D46B80E8693F3672C4193E7 /* Pods-RESTFacility.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RESTFacility.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RESTFacility/Pods-RESTFacility.debug.xcconfig"; sourceTree = "<group>"; };
 		F860ACB9216207D000C0CECE /* RESTFacility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RESTFacility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F860ACBC216207D000C0CECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F860ACBE216207D000C0CECE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E10B2A25D9F2F36D75B7F6 /* Pods_RESTFacility.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		857EC627CB4BD3A22586F28F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D46B80E8693F3672C4193E7 /* Pods-RESTFacility.debug.xcconfig */,
+				6A405452349D861CF6DF524D /* Pods-RESTFacility.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F7A9584C2778C6FE465459B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56D4E3B02AC8896D186E69B9 /* Pods_RESTFacility.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F860ACB0216207D000C0CECE = {
 			isa = PBXGroup;
 			children = (
 				F860ACBB216207D000C0CECE /* RESTFacility */,
 				F860ACBA216207D000C0CECE /* Products */,
+				857EC627CB4BD3A22586F28F /* Pods */,
+				F7A9584C2778C6FE465459B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F860ACCE216207D700C0CECE /* Build configuration list for PBXNativeTarget "RESTFacility" */;
 			buildPhases = (
+				F2E6DE23F6AF1582AEE3AD40 /* [CP] Check Pods Manifest.lock */,
 				F860ACB5216207D000C0CECE /* Sources */,
 				F860ACB6216207D000C0CECE /* Frameworks */,
 				F860ACB7216207D000C0CECE /* Resources */,
+				8A033026C0AAD04764C08F3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +167,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A033026C0AAD04764C08F3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RESTFacility/Pods-RESTFacility-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JSON/JSON.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RESTFacility/Pods-RESTFacility-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2E6DE23F6AF1582AEE3AD40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RESTFacility-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F860ACB5216207D000C0CECE /* Sources */ = {
@@ -294,6 +369,7 @@
 		};
 		F860ACCF216207D700C0CECE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D46B80E8693F3672C4193E7 /* Pods-RESTFacility.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -313,6 +389,7 @@
 		};
 		F860ACD0216207D700C0CECE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A405452349D861CF6DF524D /* Pods-RESTFacility.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;

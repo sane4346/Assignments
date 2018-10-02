@@ -1,0 +1,6 @@
+framework module Pods_RESTFacility {
+  umbrella header "Pods-RESTFacility-umbrella.h"
+
+  export *
+  module * { export * }
+}
