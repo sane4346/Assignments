@@ -9,9 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var facilityClient : FacilityClient?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self.facilityClient =  FacilityClient()
+            self.startfacilities()
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -19,7 +25,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    func startfacilities()
+    {
+        FacilityVM(client:self.facilityClient)
+    }
 
 }
 

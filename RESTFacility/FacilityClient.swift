@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import JSON
+import ObjectMapper
 
 enum httpRequestMethod : String {
     case get = "GET"
@@ -30,54 +32,52 @@ class FacilityClient {
         self.iconUrl = IconsPath
     }
     
-    func getBaseRequest(path: String? = nil ,requestMethod : httpRequestMethod? = .get , param : [String : Any] = [:]) -> URLRequest
+    func getBaseRequest(path: String? = nil ,requestMethod : httpRequestMethod? = .get , param : [String : Any] = [:]) -> URLRequest?
     {
         guard let url = baseUrl  else {
-            return
+            return URLRequest(url: (URL(string: APIPath))!)
         }
-        
-        var requestURL: URL = url
-
-            if let newURL = URL(string: url.absoluteString + "?" + paramString) {
+        var requestURL : URL?
+            if let newURL = URL(string: url) {
                 requestURL = newURL
         }
         
-        var request: URLRequest? = URLRequest(url: requestURL)
+        var request: URLRequest? = URLRequest(url: requestURL!)
         request?.timeoutInterval = 10
         request?.allHTTPHeaderFields
-        request?.httpMethod = requestMethod.rawValue
+        request?.httpMethod = requestMethod?.rawValue
         
- 
+        return request
     
     }
     
     
-    getreques(needToSaveInterval: String? = nil, request: URLRequest, completion: ((JsonDictionary?, Error?) -> Void)?) {
-    requestQueue.addOperation { [weak self] in
-    let task = self?.session.dataTask(with: request) { [weak self] data, response, error in
-    
-        guard
-        error == nil,
-        let httpResponse = response as? HTTPURLResponse,
-        httpResponse.statusCode == 200,
-        let data = data,
-        let jsonData = try? JSONSerialization.jsonObject(with: data, options: []),
-        let json = jsonData as? JsonDictionary,
-        let rsp = json["rsp"] as? JsonDictionary
-        else {
-        if (response as? HTTPURLResponse)?.statusCode == 401 {
-        self?.token = nil
-        self?.requestQueue.isSuspended = true
-
+    func sendRequestForData(needToSaveInterval: String? = nil, request: URLRequest, completion: ((Any?, Error?) -> Void)?) {
+    //requestQueue.addOperation { [weak self] in
+        let session = URLSession.self
+        let task = session.shared.dataTask(with: request) { [weak self] data, response, error in
+        
+            guard
+            error == nil, let httpResponse = response as? HTTPURLResponse,
+            httpResponse.statusCode == 200,
+            let data = data,
+                let jsonData = try? JSONSerialization.jsonObject(with: data, options: [])
+            //let json = jsonData as? JsonDictionary,
+            //let rsp = json["rsp"] as? JsonDictionary
+            else {
+                    if (response as? HTTPURLResponse)?.statusCode == 401 {
+                        }
+                    completion?(nil, error)
+                    return
             }
-        completion?(nil, error)
-        return
-        }
- 
-        completion?(rsp, nil)
-        }
-        task?.resume()
+     
+            completion?(jsonData, nil)
+            }
+        task.resume()
+    //}
     }
-    }
+    
+    
+    
 }
 
